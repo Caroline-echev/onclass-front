@@ -1,1 +1,18 @@
-<p>library works!</p>
+
+<app-template></app-template>
+<div class="table-container"><table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of technologies">
+        <th scope="row">{{t.id}}</th>
+        <td>{{t.name}}</td>
+        <td>{{t.description}}</td>
+      </tr>
+    </tbody>
+  </table></div>

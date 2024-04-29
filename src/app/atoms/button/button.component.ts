@@ -5,11 +5,12 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
-export class ButtonComponent  {
-  @Input() text: boolean = false;
-  
-  constructor() { }
+export class ButtonComponent {
+  @Input() text: string = '';
+  @Input() boolPlus: boolean = false; 
 
-  
-
+  // Getter para boolPlus
+ // get boolPlus(): boolean {
+ //   return this.plus === 'true';
+ // }
 }

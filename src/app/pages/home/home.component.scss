@@ -1,7 +1,15 @@
-.main-content {
-    padding: 20px; /* Add some padding for visual separation */
-    margin-left: 393px; /* Match the width of the nav container */
-    min-height: 100vh; /* Ensure it fills the viewport height */
-  }
-  
-  
+.home-container-admin {
+  display: flex;  
+  width: 80%;
+  height: 100vh;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  margin-left: 20% ;
+  position: fixed; 
+}
+
+.home-container-admin app-text {
+  font-weight: bold;
+  margin-bottom: 10px;
+}

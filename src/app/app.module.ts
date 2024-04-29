@@ -14,6 +14,12 @@ import { TextComponent } from './atoms/text/text.component';
 import { LibraryComponent } from './pages/library/library.component';
 import { TemplateComponent } from './pages/template/template.component';
 
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'library', component: LibraryComponent },
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +33,8 @@ import { TemplateComponent } from './pages/template/template.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     {

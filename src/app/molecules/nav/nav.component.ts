@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { route  } from 'src/app/util/route';
+import { routeImg  } from 'src/app/util/route.images';
 @Component({
 
   selector: 'app-nav',
@@ -8,7 +8,7 @@ import { route  } from 'src/app/util/route';
 })
 export class NavComponent implements OnInit {
 
-  route = route
+  route = routeImg
   constructor() { }
   ngOnInit(): void {
     

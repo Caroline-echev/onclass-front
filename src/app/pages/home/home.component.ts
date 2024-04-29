@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TechnologyService } from 'src/app/services/technology.service';
+
 
 @Component({
   selector: 'app-home',

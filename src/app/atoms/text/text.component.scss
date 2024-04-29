@@ -1,0 +1,21 @@
+.text-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  
+}
+.icon-text {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  background-size: cover;
+
+}
+
+.text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #E7833D;
+  text-align: left; 
+}
+

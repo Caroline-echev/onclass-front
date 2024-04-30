@@ -15,6 +15,7 @@ import { LibraryComponent } from './pages/library/library.component';
 import { TemplateComponent } from './pages/template/template.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { MenuComponent } from './molecules/menu/menu.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -29,7 +30,8 @@ const routes: Routes = [
     NavComponent,
     TextComponent,
     LibraryComponent,
-    TemplateComponent
+    TemplateComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

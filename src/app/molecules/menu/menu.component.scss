@@ -1,0 +1,26 @@
+ul {
+    width: 365px;
+    margin-left: 22%;
+    margin-top: 47px;
+    list-style: none;
+    text-align: center;
+    border-bottom: 2px solid #E7833D;
+}
+
+ li {
+    display: inline-block;
+    
+    &:hover {
+        border-bottom: 2px solid #E7833D;
+        box-shadow: 0px 10px 10px rgba(#E7833D, 0.4);
+        transition: box-shadow 0.3s ease;
+    }
+    
+}
+  a {
+    text-decoration: none;
+  }
+  
+  
+ 
+  

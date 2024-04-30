@@ -1,4 +1,4 @@
-<div class="text-container">
-  <img *ngIf="hasIconUrl" class="icon-text" [src]="iconUrl" alt="Images">
+<div [class]="classText">
+  <img *ngIf="hasIconUrl" class="text__icon" [src]="iconUrl" alt="Images">
   <span class="text">{{ text }}</span>
 </div>

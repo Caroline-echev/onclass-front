@@ -36,14 +36,14 @@
   margin: 0 auto;
   
   cursor: pointer;
-
   &:hover { 
-    
-    background-color: rgba(231, 131, 61, 0.15); 
-    font-weight: bold;
+  background-color: rgba(231, 131, 61, 0.15); 
+  font-weight: bold;
 
-  }
+}
+  
 } 
+
  .active-router {
   background-color: rgba(231, 131, 61, 0.4); 
   font-weight: bold;

@@ -5,3 +5,4 @@ export class Technology {
     public description: string
    ){}
 }
+

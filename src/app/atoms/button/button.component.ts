@@ -9,8 +9,5 @@ export class ButtonComponent {
   @Input() text: string = '';
   @Input() boolPlus: boolean = false; 
 
-  // Getter para boolPlus
- // get boolPlus(): boolean {
- //   return this.plus === 'true';
- // }
+
 }

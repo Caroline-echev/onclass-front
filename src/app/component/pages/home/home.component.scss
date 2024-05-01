@@ -1,0 +1,17 @@
+.home {
+  display: flex;  
+  width: 80%;
+  height: 100vh;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  margin-left: 20% ;
+  position: fixed; 
+  
+  
+}
+
+.home__text {
+  font-weight: bold;
+  margin-bottom: 10px;
+}

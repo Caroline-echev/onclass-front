@@ -1,0 +1,28 @@
+@import './src/app/styles/_variables';
+
+.menu {
+    width: 367px;
+    margin-left: 22%;
+    margin-top: 47px;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    border-bottom: 2px solid $primary-color;
+}
+
+ .menu__items {
+    display: inline-block;
+    
+    &:hover {
+        border-bottom: 2px solid $primary-color;
+        font-weight: bold;
+        transition: box-shadow 0.3s ease;
+        box-shadow: 0px 0px 20px 0px #E7833D66 inset;
+        box-shadow: 0px 6px 12px 0px #E7833D66;
+    }
+    
+}
+ 
+  
+ 
+  

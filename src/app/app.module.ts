@@ -6,20 +6,26 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor'; 
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { ButtonComponent } from './atoms/button/button.component';
-import { HeaderComponent } from './atoms/header/header.component';
-import { NavComponent } from './molecules/nav/nav.component';
-import { TextComponent } from './atoms/text/text.component';
-import { LibraryComponent } from './pages/library/library.component';
-import { TemplateComponent } from './pages/template/template.component';
+import { HomeComponent } from 'src/app/component/pages/home/home.component';
+import { ButtonComponent } from 'src/app/component/atoms/button/button.component';
+import { HeaderComponent } from 'src/app/component/atoms/header/header.component';
+import { NavComponent } from 'src/app/component/molecules/nav/nav.component';
+import { TextComponent } from 'src/app/component/atoms/text/text.component';
+import { LibraryComponent } from 'src/app/component/pages/library/library.component';
+import { TemplateComponent } from 'src/app/component/template/template.component';
+import { MenuComponent } from 'src/app/component/molecules/menu/menu.component';
 
 import { RouterModule, Routes } from '@angular/router';
-import { MenuComponent } from './molecules/menu/menu.component';
+import { FormComponent } from 'src/app/component/organisms/form/form.component';
+import { InputComponent } from 'src/app/component/molecules/input/input.component';
+import { HeaderFormComponent } from 'src/app/component/molecules/header-form/header-form.component';
+import { BodyFormComponent } from 'src/app/component/organisms/body-form/body-form.component';
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'library', component: LibraryComponent },
+  { path: '' , redirectTo: 'home', pathMatch: 'full' },
 ]
 @NgModule({
   declarations: [
@@ -31,7 +37,12 @@ const routes: Routes = [
     TextComponent,
     LibraryComponent,
     TemplateComponent,
-    MenuComponent
+    MenuComponent,
+    FormComponent,
+    InputComponent,
+    HeaderFormComponent,
+    BodyFormComponent,
+   
   ],
   imports: [
     BrowserModule,

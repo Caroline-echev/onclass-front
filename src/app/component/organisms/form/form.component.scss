@@ -1,0 +1,19 @@
+@import './src/app/styles/_variables';
+
+.transparency{
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+    
+    display: flex;
+   align-items: center;
+ justify-content: center;
+    
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 645px;
+    
+}

@@ -3,4 +3,5 @@ export  enum routeImg {
     HOME = "assets/images/inicio.png",
     LIBRARY = "assets/images/biblioteca.png",
     USER = "assets/images/usuario.png",
+    PLUS = "assets/images/plus.svg"
     }

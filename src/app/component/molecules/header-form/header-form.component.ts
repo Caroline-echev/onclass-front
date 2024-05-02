@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header-form',
@@ -6,10 +6,17 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./header-form.component.scss']
 })
 export class HeaderFormComponent implements OnInit {
-  @Input() title: string = '';
+  @Input() title: string = ''; 
+   @Input() boolForm: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  @Output() closeForm = new EventEmitter<boolean>();
+
+  onCloseForm(): void {
+    this.closeForm.emit(true); 
+  }
 }

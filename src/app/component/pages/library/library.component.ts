@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TechnologyService } from 'src/app/services/technology.service';
 
 @Component({
   selector: 'app-library',
@@ -8,20 +7,19 @@ import { TechnologyService } from 'src/app/services/technology.service';
 })
 export class LibraryComponent implements OnInit {
 
-  technologies: any[] = [];
-  errorMessage: string = '';
-
-  constructor(private technologyService: TechnologyService) { }
+ 
+  boolForm: boolean = false; 
+  constructor() { }
 
   ngOnInit(): void {
-    this.getTechnologies();
+   
   }
 
-  getTechnologies(): void {
-    this.technologyService.getTechnologies()
-      .subscribe(
-        data => this.technologies = data,
-        error => this.errorMessage = 'Error fetching technologies: ' + error.message
-      );
+  showForm(): void {
+    this.boolForm =  true;
   }
+  onCloseFormReceived(event: boolean) {
+    this.boolForm = false; 
+  }
+  
 }

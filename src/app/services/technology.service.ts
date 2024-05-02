@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Technology } from 'src/app/common/technology/technology';
+import { Technology } from 'src/app/common/technology/technology.class';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TechnologyService {
   private apiUrl: string = 'http://localhost:8090/technology/getTechnologies';
 
@@ -13,5 +11,9 @@ export class TechnologyService {
 
   getTechnologies(): Observable<Technology[]> {
     return this.httpClient.get<Technology[]>(this.apiUrl);
+  }
+
+  addTechnology(technology: Technology): Observable<Technology> {
+    return this.httpClient.post<Technology>(this.apiUrl, technology);
   }
 }

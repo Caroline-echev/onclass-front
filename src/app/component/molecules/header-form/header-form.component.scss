@@ -22,9 +22,8 @@
  .header-form__button{
     color: $primary-color;
     background-color: transparent;
-   
- }
- .button-form:hover{
-    transform: scale(1.1);
+ &:hover{
+    transform: scale(1.6);
     transition: transform 0.2s ease-in-out;
  }
+}

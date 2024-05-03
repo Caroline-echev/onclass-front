@@ -4,14 +4,11 @@ import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
-    MenuComponent
+   
   ],
   imports: [
     CommonModule,
   ],
-  exports: [
-    MenuComponent,
-    
-  ]
+  
 })
 export class MoleculesModule { }

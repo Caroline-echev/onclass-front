@@ -60,3 +60,32 @@ i{
     list-style: none;
     width: 100%;
 }
+
+//input 
+
+.input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $primary-color;
+    border-radius: 25px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    margin-top: 8px;
+    background-color: rgb($primary-color, 0.15);
+  }
+  
+  .input::placeholder {
+    color: $placeholder-color;
+    font-size: $small-text;
+    padding-left: 10px;
+  }
+  .input:hover {
+    box-shadow: 0 0 0 .20vw rgba($primary-color, 0.3);
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 .20vw $primary-color;
+    transition: box-shadow 0.3s ease;
+  }

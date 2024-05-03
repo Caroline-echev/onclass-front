@@ -1,22 +1,25 @@
 <div class="transparency">
-    <form class="form">
+    <section class="form"  >
         <header   class="header-form">
-            <h2 class="header-form__text" >Crear Tecnologia</h2>
+            <h2 class="header-form__text" >{{title}}</h2>
             <button class="header-form__button" (click)="onCloseForm()">
                 <i class="fa-solid fa-xmark" ></i>
             </button>
             
         </header>
-        <body class="body-form">
+        <form class="body-form" [formGroup]="formTechnology" (ngSubmit)="onSubmit()">
             <ul class="body-form__inputs">
-              <li *ngFor="let input of inputTechnology">
-                <app-input
-                  [title]="input.title"
-                  [textPlaceholder]="input.placeholder"
-                ></app-input>
+              <li *ngFor="let input of inputData">
+                <label class="input__title">{{input.title}}</label>
+                <input
+                  class="input"
+                  type="text"
+                  [placeholder]="input.placeholder" autofocus
+                  [formControlName]="input.controlName">
               </li>
             </ul>
-            <app-button text="Crear"  ></app-button>
-          </body>
-    </form>
+            <app-button text="Crear" ></app-button>
+          </form>
+          {{ formTechnology.value | json}} 
+    </section>
 </div>

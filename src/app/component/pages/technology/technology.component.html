@@ -2,4 +2,7 @@
     <p class="technology__empty--text">Crea una tecnología</p>
     <app-button class="technology__empty--button" text="Crear" classButton="fa-solid fa-plus" (click)="showForm()"></app-button>
 </div>
-<app-form *ngIf="boolForm" [inputTechnology]="inputTechnology"></app-form>
+<app-form *ngIf="boolForm" 
+    [inputData]="inputTechnology"
+    title="Crear tecnología"
+    typeModel="technology" (closeForm)="onClose() "></app-form>

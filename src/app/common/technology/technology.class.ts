@@ -18,16 +18,4 @@ export class Technology {
         error => this.errorMessage = 'Error fetching technologies: ' + error.message
       );
   }
-  
-/*addTechnology(): void {
-    this.techn ologyService.addTechnology({ name: 'Angular', description: 'Angular' })
-      .subscribe(
-        data => {
-          console.log(data);
-          this.getTechnologies();
-        },
-        error => console.log(error)
-      );
-  }*/
- }
- 
+}

@@ -13,17 +13,20 @@ export class TechnologyComponent  {
     {
       title: 'Nombre: ',
       placeholder: 'Nombre de la tecnologia',
+      controlName: 'name'
     },
     {
       title: 'Descripción: ',
       placeholder: 'Descripción de la tecnologia',
+      controlName: 'description'
     }
   ];
   showForm(): void {
     this.boolForm =  true;
   }
-  onCloseFormReceived(event: boolean) {
+  onClose() {
     this.boolForm = false; 
+    
   }
   
 }

@@ -1,21 +1,17 @@
-@import './src/app/styles/_variables';
+@import 'src/app/styles/_variables';
 
 .text__nav {
-  display: flex;
-  align-items: center;
   text-align: left; 
   width: 150px;
   font-size: $medium-text;
 }
 
 .text__container {
-  display: flex;
   font-size: $big-text;
   text-align: center;
 }
 
 .text__menu {
-  display: flex;
   width: 100%;
   font-size: 13px;
   margin: 0 20px;

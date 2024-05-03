@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { InputData } from 'src/app/common/interface/input-data';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
   inputTechnology: InputData[] = [
     {
       title: 'Nombre: ',
@@ -16,12 +16,12 @@ export class FormComponent implements OnInit {
       placeholder: 'Descripción de la tecnologia',
     }
   ];
-  constructor() { }
+  @Output() closeForm = new EventEmitter<boolean>();
 
-  ngOnInit(): void {
-   
+
+  onCloseForm(): void {
+    this.closeForm.emit(true); 
   }
-
  
 }
 

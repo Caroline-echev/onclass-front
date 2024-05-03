@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from 'src/app/component/pages/home/home.component';
 import { LibraryComponent } from 'src/app/component/pages/library/library.component';
 
-import { TextComponent } from 'src/app/component/atoms/text/text.component';
+
 import { ButtonComponent } from 'src/app/component/atoms/button/button.component';
 import { HeaderComponent } from 'src/app/component/atoms/header/header.component';
 
@@ -19,7 +19,7 @@ import { TemplateComponent } from 'src/app/component/template/template.component
 import { MenuComponent } from 'src/app/component/molecules/menu/menu.component';
 import { FormComponent } from 'src/app/component/organisms/form/form.component';
 import { InputComponent } from 'src/app/component/molecules/input/input.component';
-import { HeaderFormComponent } from 'src/app/component/molecules/header-form/header-form.component';
+
 import { BodyFormComponent } from 'src/app/component/organisms/body-form/body-form.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -31,13 +31,11 @@ import { AppRoutingModule } from './app-routing.module';
     ButtonComponent,
     HeaderComponent,
     NavComponent,
-    TextComponent,
     LibraryComponent,
     TemplateComponent,
     MenuComponent,
     FormComponent,
     InputComponent,
-    HeaderFormComponent,
     BodyFormComponent,
    
   ],

@@ -20,7 +20,7 @@ export class Technology {
   }
   
 /*addTechnology(): void {
-    this.technologyService.addTechnology({ name: 'Angular', description: 'Angular' })
+    this.techn ologyService.addTechnology({ name: 'Angular', description: 'Angular' })
       .subscribe(
         data => {
           console.log(data);

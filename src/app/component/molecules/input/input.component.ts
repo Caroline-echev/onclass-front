@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -8,8 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class InputComponent implements OnInit {
 @Input() title: string = '';
 @Input() textPlaceholder: string = '';
-  constructor() { }
 
+  inputValue: string = '';
+
+  
   ngOnInit(): void {
   }
 

@@ -6,8 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-  @Input() text: string = '';
-  @Input() boolPlus: boolean = false; 
+  @Input() text?: string = '';
+  @Input() classButton?: string =''; 
 
 
 }

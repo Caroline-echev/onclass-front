@@ -3,7 +3,7 @@
 .button {
   background: $primary-color;
   position: relative;
-  padding: 4px 15px;
+  padding: 12px ;
   display: flex;
   align-items: center;
   font-size: 17px;
@@ -17,10 +17,15 @@
   color: #fff;
   transition: color 0.3s 0.1s ease-out;
   text-align: center;
+  justify-content: center;
+  gap: 10px;
 }
-
+i{
+  font-size: 17px;
+  
+}
 .button__text {
-  margin: 8px;
+  
 }
 
 .button::before {

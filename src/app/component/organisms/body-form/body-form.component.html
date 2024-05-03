@@ -1,9 +1,11 @@
 <section class="body-form">
   <ul class="body-form__inputs">
     <li *ngFor="let input of inputData">
-      <app-input [title]="input.title" [textPlaceholder]="input.placeholder"></app-input>
+      <app-input
+        [title]="input.title"
+        [textPlaceholder]="input.placeholder"
+      ></app-input>
     </li>
   </ul>
-  <app-button autofocus class="body-form__button" text="Crear" [boolPlus]=false ></app-button>
+ <!--<app-button autofocus class="body-form__button" text="Crear" [boolPlus]=false ></app-button>--> 
 </section>
-

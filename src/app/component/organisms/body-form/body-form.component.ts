@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { InputData } from 'src/app/common/interface/input-data';
+import { Technology } from 'src/app/common/interface/technology';
 @Component({
   selector: 'app-body-form',
   templateUrl: './body-form.component.html',
@@ -12,5 +13,6 @@ export class BodyFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
+ 
 }

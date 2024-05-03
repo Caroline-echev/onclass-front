@@ -7,14 +7,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class HeaderFormComponent implements OnInit {
   @Input() title: string = ''; 
-   @Input() boolForm: boolean = true;
-
+  @Input() boolForm: boolean = true;
+  @Output() closeForm = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  @Output() closeForm = new EventEmitter<boolean>();
+  
 
   onCloseForm(): void {
     this.closeForm.emit(true); 

@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { InputData } from 'src/app/common/interface/input-data';
+import { FormControl } from '@angular/forms';
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',

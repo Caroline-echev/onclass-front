@@ -9,34 +9,28 @@ import { HomeComponent } from 'src/app/component/pages/home/home.component';
 import { LibraryComponent } from 'src/app/component/pages/library/library.component';
 
 
-import { ButtonComponent } from 'src/app/component/atoms/button/button.component';
-import { HeaderComponent } from 'src/app/component/atoms/header/header.component';
-
-import { NavComponent } from 'src/app/component/molecules/nav/nav.component';
-import { MenuComponent } from 'src/app/component/molecules/menu/menu.component';
-import { FormComponent } from 'src/app/component/organisms/form/form.component';
 import { AppRoutingModule } from './app-routing.module';
-import { InputComponent } from './component/atoms/input/input.component';
 import { TechnologyComponent } from './component/pages/technology/technology.component';
+import { MoleculesModule } from 'src/app/component/molecules/molecules.module';
+import { AtomsModule } from 'src/app/component/atoms/atoms.module';
+import { NavComponent } from './component/molecules/nav/nav.component';
+import { OrganismsModule } from './component/organisms/organisms.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ButtonComponent,
-    HeaderComponent,
-    NavComponent,
     LibraryComponent,
-    MenuComponent,
-    FormComponent,
-    InputComponent,
-    TechnologyComponent
+    TechnologyComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
-    
+    AppRoutingModule,
+    AtomsModule,
+    MoleculesModule,
+    OrganismsModule
   ],
   providers: [
     {

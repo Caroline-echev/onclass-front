@@ -6,13 +6,7 @@ import { routeImg  } from 'src/app/util/route.images';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent implements OnInit {
-
+export class NavComponent{
   route = routeImg
-  constructor() { }
-  ngOnInit(): void {
-    
-
-  }
-
+  
 }

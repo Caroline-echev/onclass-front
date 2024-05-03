@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { InputData } from 'src/app/common/interface/input-data';
 @Component({
   selector: 'app-form',
@@ -6,16 +6,7 @@ import { InputData } from 'src/app/common/interface/input-data';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
-  inputTechnology: InputData[] = [
-    {
-      title: 'Nombre: ',
-      placeholder: 'Nombre de la tecnologia',
-    },
-    {
-      title: 'Descripción: ',
-      placeholder: 'Descripción de la tecnologia',
-    }
-  ];
+  @Input() inputTechnology: InputData[] = [];
   @Output() closeForm = new EventEmitter<boolean>();
 
 

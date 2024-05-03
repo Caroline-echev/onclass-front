@@ -1,5 +1,3 @@
-
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -15,14 +13,11 @@ import { ButtonComponent } from 'src/app/component/atoms/button/button.component
 import { HeaderComponent } from 'src/app/component/atoms/header/header.component';
 
 import { NavComponent } from 'src/app/component/molecules/nav/nav.component';
-import { TemplateComponent } from 'src/app/component/template/template.component';
 import { MenuComponent } from 'src/app/component/molecules/menu/menu.component';
 import { FormComponent } from 'src/app/component/organisms/form/form.component';
-import { InputComponent } from 'src/app/component/molecules/input/input.component';
-
-import { BodyFormComponent } from 'src/app/component/organisms/body-form/body-form.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { InputComponent } from './component/atoms/input/input.component';
+import { TechnologyComponent } from './component/pages/technology/technology.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +27,10 @@ import { AppRoutingModule } from './app-routing.module';
     HeaderComponent,
     NavComponent,
     LibraryComponent,
-    TemplateComponent,
     MenuComponent,
     FormComponent,
     InputComponent,
-    BodyFormComponent,
-   
+    TechnologyComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,12 @@
 <nav class="nav">
     <img class="nav__logo" src={{route.LOGO}}>
-    <ul id="nav__items">
+    <ul class="nav__items">
         <li class="nav__li" routerLink="/home" routerLinkActive="active-router">
-            <p  class="nav__text" >inicio</p>
+            <img class="nav__text--icon" src="{{ route.HOME }}" alt="Icon Home"> 
+            <p  class="nav__text" >Inicio</p>
           </li>
         <li class="nav__li" routerLink="/library" routerLinkActive="active-router">
+            <img class="nav__text--icon" src="{{ route.LIBRARY }}" alt="Icon Library"> 
             <p class="nav__text"  >Biblioteca</p>
         </li>
     </ul>

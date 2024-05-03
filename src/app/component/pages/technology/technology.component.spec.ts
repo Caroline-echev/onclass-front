@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BodyFormComponent } from './body-form.component';
+import { TechnologyComponent } from './technology.component';
 
-describe('BodyFormComponent', () => {
-  let component: BodyFormComponent;
-  let fixture: ComponentFixture<BodyFormComponent>;
+describe('TechnologyComponent', () => {
+  let component: TechnologyComponent;
+  let fixture: ComponentFixture<TechnologyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BodyFormComponent ]
+      declarations: [ TechnologyComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BodyFormComponent);
+    fixture = TestBed.createComponent(TechnologyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

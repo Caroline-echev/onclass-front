@@ -1,0 +1,14 @@
+<div  class="transparency">
+    <section class="alert"  >
+        <button class="alert__close" (click)="onCloseAlert()">
+            <i class="fa-solid fa-xmark" ></i>
+        </button>
+      
+        <i class="fa-solid fa-circle-check"></i>
+
+        <h2 class="alert__correct--text">{{textAlert}}</h2>
+
+        <app-button  text="Aceptar" (click)="onCloseAlert()"></app-button>
+          
+    </section>
+</div>

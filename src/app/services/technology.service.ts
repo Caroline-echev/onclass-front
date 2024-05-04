@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Technology } from 'src/app/common/interface/technology';
+import { Technology } from 'src/app/common/technology/technology.class';
 
 @Injectable()
 export class TechnologyService {

@@ -20,6 +20,7 @@ import { HeaderComponent } from './component/atoms/header/header.component';
 import { MenuComponent } from './component/molecules/menu/menu.component';
 import { FormComponent } from './component/organisms/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AlertComponent } from './component/molecules/alert/alert.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ButtonComponent,
     HeaderComponent,
     MenuComponent,
-    FormComponent
+    FormComponent,
+    AlertComponent
 
   ],
   imports: [

@@ -11,6 +11,7 @@
   font-weight: bold;
   text-align: left;
   color: $primary-color;
+
 }
 .nav__text {
   text-align: left; 
@@ -49,4 +50,9 @@
 .error-message {
   color: $error-color;
   font-size: 14px;
+}
+
+.alert__correct--text {
+  color: $alert-correct-text-color;
+  font-size: $alert-correct-text;
 }

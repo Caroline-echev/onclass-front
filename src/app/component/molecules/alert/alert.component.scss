@@ -1,0 +1,45 @@
+@import './src/app/styles/_variables';
+@import './src/app/styles/_text';
+.transparency{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 100; 
+    background-color: rgb($primary-color, 0.2);
+    backdrop-filter: blur(2px);
+}
+.alert {
+    display: flex;
+    flex-direction: column;
+    width: 394px;
+    padding: 16px 23px;
+    border-radius: 25px;
+    background-color: $form-color;
+    overflow: hidden; 
+    align-items: center;
+    gap: 15px;
+}
+.fa-xmark{
+     font-size: 22px;
+}
+.alert__close{
+    display: flex;
+    color: $primary-color;
+    background-color: transparent;
+    padding: 4px;
+    margin-left: 95%;
+    &:hover{
+        transform: scale(1.6);
+        transition: transform 0.2s ease-in-out;
+ }
+}
+
+.fa-circle-check{
+    color: $alert-correct-color;
+    font-size: 80px;
+    right: 50%;
+}

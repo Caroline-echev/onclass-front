@@ -1,5 +1,5 @@
-<div class="transparency">
-    <section class="form"  >
+<div class="transparency" *ngIf="!boolAlert">
+    <section class="form" >
 
         <header   class="header-form">
             <h2 class="header-form__text" >{{title}}</h2>
@@ -8,7 +8,7 @@
             </button>
         </header>
 
-        <form class="body-form" [formGroup]="formTechnology" (ngSubmit)="onSubmit()">
+        <form class="body-form" [formGroup]="form" (ngSubmit)="onSubmit()">
 
             <ul class="body-form__inputs">
               
@@ -22,14 +22,14 @@
                   [placeholder]="input.placeholder" autofocus
                   [formControlName]="input.controlName"
                   [ngClass]="{ 'input--error':
-                   formTechnology.get(input.controlName)?.invalid 
-                  && (formTechnology.get(input.controlName)?.dirty
+                   form.get(input.controlName)?.invalid 
+                  && (form.get(input.controlName)?.dirty
                   ) }"
                   >
                   
                   <div class="alert"
-                   *ngIf="!formTechnology.get(input.controlName)?.hasError('*')
-                   && formTechnology.get(input.controlName)?.dirty">
+                   *ngIf="!form.get(input.controlName)?.hasError('*')
+                   && form.get(input.controlName)?.dirty">
                     <span class="error-message">{{ getErrorMessage(input.controlName) }}</span>
                   </div>
 
@@ -37,13 +37,10 @@
           
             </ul>
 
-            <app-button text="Crear" ></app-button>
+            <app-button class="form__button" text="Crear" (click)="showAlert()"></app-button>
 
           </form>
-
-          <pre>{{ formTechnology.value | json }}</pre>
-          <pre>{{ formTechnology.valid }}</pre>
-          <pre>{{ formTechnology.status}}</pre>
-          
+  
     </section>
 </div>
+<app-alert *ngIf="boolAlert" (closeAlert)="onClose()"   textAlert="¡Tecnología creada!"></app-alert>

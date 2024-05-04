@@ -15,23 +15,26 @@ export class FormComponent  implements OnInit {
   @Output() closeForm = new EventEmitter<void>();
   formTechnology: FormGroup = new FormGroup({});
   newTechnology: Technology = {} as Technology;
-  
-  constructor(private fb: FormBuilder, private technologyService: TechnologyService) { }
+  messageAlert: string = 'Nombre Obligatorio';
+  constructor(
+    private fb: FormBuilder, 
+    private technologyService: TechnologyService) { }
   
   ngOnInit(): void {
     if (this.model === 'technology') {
       this.formTechnology = this.fb.group({
-        name: ['', Validators.required],
-        description: ['', Validators.required]
+        name: ['', [Validators.required, Validators.maxLength(50)]],
+        description: ['', [Validators.required, Validators.maxLength(90)]]
       });
     }
+    
   }
 
   onCloseForm(): void {
     this.closeForm.emit();
   }
   onSubmit(): void {
-    if (this.formTechnology.valid) {
+    if (this.formTechnology.valid && this.model === 'technology') {
       this.newTechnology.name = this.formTechnology.value.name;
       this.newTechnology.description = this.formTechnology.value.description;
       console.log('Technology:', this.newTechnology);
@@ -39,7 +42,7 @@ export class FormComponent  implements OnInit {
         .subscribe(
           data => {
             console.log('Technology added:', data);
-            this.formTechnology.reset(); // Reset form after successful submission (optional)
+            this.formTechnology.reset(); 
           },
           error => console.error('Error adding technology:', error)
         );
@@ -47,5 +50,29 @@ export class FormComponent  implements OnInit {
       console.error('Form is invalid. Please check for errors.');
     }
 }
+getErrorMessage( fieldName: string): string {
+  if (fieldName.toLowerCase() === 'name'){
+
+    if(this.formTechnology.get('name')?.hasError('required')){
+      return ` Nombre es obligatorio`;
+    }else if(this.formTechnology.get('name')?.hasError('maxlength')){
+      return `El nombre debe ser menor a 50 caracteres`;
+    }
+   
+  }  else if (fieldName.toLowerCase() === 'description'){
+
+    if(this.formTechnology.get('description')?.hasError('required')){
+    return `Descripción es obligatorio`;
+    }else if(this.formTechnology.get('description')?.hasError('maxlength')){
+      return `La descripción debe ser menor a 90 caracteres`;
+    }
+    
+  }
+  
+  return '';
 }
+
+
+}
+
 type typeModel = 'technology' | 'capacity' | 'bootcamp'

@@ -1,25 +1,49 @@
 <div class="transparency">
     <section class="form"  >
+
         <header   class="header-form">
             <h2 class="header-form__text" >{{title}}</h2>
             <button class="header-form__button" (click)="onCloseForm()">
                 <i class="fa-solid fa-xmark" ></i>
             </button>
-            
         </header>
+
         <form class="body-form" [formGroup]="formTechnology" (ngSubmit)="onSubmit()">
+
             <ul class="body-form__inputs">
+              
               <li *ngFor="let input of inputData">
+
                 <label class="input__title">{{input.title}}</label>
+
                 <input
                   class="input"
                   type="text"
                   [placeholder]="input.placeholder" autofocus
-                  [formControlName]="input.controlName">
+                  [formControlName]="input.controlName"
+                  [ngClass]="{ 'input--error':
+                   formTechnology.get(input.controlName)?.invalid 
+                  && (formTechnology.get(input.controlName)?.dirty
+                  ) }"
+                  >
+                  
+                  <div class="alert"
+                   *ngIf="!formTechnology.get(input.controlName)?.hasError('*')
+                   && formTechnology.get(input.controlName)?.dirty">
+                    <span class="error-message">{{ getErrorMessage(input.controlName) }}</span>
+                  </div>
+
               </li>
+          
             </ul>
+
             <app-button text="Crear" ></app-button>
+
           </form>
-          {{ formTechnology.value | json}} 
+
+          <pre>{{ formTechnology.value | json }}</pre>
+          <pre>{{ formTechnology.valid }}</pre>
+          <pre>{{ formTechnology.status}}</pre>
+          
     </section>
 </div>

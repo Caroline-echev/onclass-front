@@ -9,5 +9,4 @@ export class ButtonComponent {
   @Input() text?: string = '';
   @Input() classButton?: string ='hidden'; 
 
-
 }

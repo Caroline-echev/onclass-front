@@ -11,20 +11,12 @@ import { OrganismsModule } from '../organisms/organisms.module';
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    LibraryComponent,
-    TechnologyComponent
+   
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule,
-    AtomsModule, 
-    MoleculesModule, 
-    OrganismsModule
+  
   ],
-  exports: [
-    HomeComponent,
-    LibraryComponent,
-  ]
+ 
 })
 export class PagesModule { }

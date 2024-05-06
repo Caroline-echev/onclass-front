@@ -3,6 +3,8 @@ import { InputData } from 'src/app/common/interface/input-data';
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { Technology } from 'src/app/common/technology/technology.class';
 import { TechnologyService } from 'src/app/services/technology.service';
+import { ErrorHandlingService } from 'src/app/services/error-handling.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -14,10 +16,12 @@ export class FormComponent  implements OnInit {
   @Input() model: typeModel = 'technology';
   @Output() closeForm = new EventEmitter<void>();
   boolAlert: boolean = false; 
+  boolError: boolean = false;
   form : FormGroup = new FormGroup({});
   formTechnology: FormGroup = new FormGroup({});
   newTechnology: Technology = {} as Technology;
   messageAlert: string = '';
+  messageError: string = '';
   constructor(
     private fb: FormBuilder,
     private technologyService: TechnologyService
@@ -36,24 +40,44 @@ export class FormComponent  implements OnInit {
     }
     
   }
-  
+
   onCloseForm() {
     this.closeForm.emit(); 
   }
   showAlert(): void {
     this.boolAlert =  true;
   }
+  showError(): void {
+    this.boolError =  true;
+  }
+  onCloseError() {
+    this.boolError = false;
+  }
   onClose() {
     this.onCloseForm();
     this.boolAlert = false; 
   }
-
+  
   onSubmit(): void {
     if (this.formTechnology.valid && this.model === 'technology') {
       this.newTechnology.name = this.formTechnology.value.name;
       this.newTechnology.description = this.formTechnology.value.description;
-      this.newTechnology.addTechnology(this.newTechnology);
-      this.showAlert();
+      //this.messageError = this.newTechnology.addTechnology(this.newTechnology);
+      //console.log('holaaaaa',this.messageError);
+      this.technologyService.addTechnology(this.newTechnology) 
+      .subscribe(
+        data => {
+          console.log('Technology added:', data);
+           this.showAlert();
+        },
+        error => {
+          this.messageError = error.message;
+          this.showError();
+          console.log('clase ta error', this.messageError)
+      
+        }
+      )
+     
       this.formTechnology.reset();
     } else {
       console.error('Form is invalid. Please check for errors');

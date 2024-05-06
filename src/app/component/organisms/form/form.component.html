@@ -37,10 +37,11 @@
           
             </ul>
 
-            <app-button class="form__button" text="Crear" (click)="showAlert()"></app-button>
+            <app-button class="form__button" type="submit" text="Crear" ></app-button>
 
           </form>
   
     </section>
 </div>
 <app-alert *ngIf="boolAlert" (closeAlert)="onClose()"   textAlert="¡Tecnología creada!"></app-alert>
+<app-toast *ngIf="boolError" (closeError)="onCloseError()"   message="{{messageError}}"></app-toast>

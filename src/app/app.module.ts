@@ -10,10 +10,7 @@ import { LibraryComponent } from 'src/app/component/pages/library/library.compon
 
 import { AppRoutingModule } from './app-routing.module';
 import { TechnologyComponent } from './component/pages/technology/technology.component';
-import { MoleculesModule } from 'src/app/component/molecules/molecules.module';
-import { AtomsModule } from 'src/app/component/atoms/atoms.module';
 import { NavComponent } from './component/molecules/nav/nav.component';
-import { OrganismsModule } from './component/organisms/organisms.module';
 import { TechnologyService } from 'src/app/services/technology.service'; 
 import { ButtonComponent } from './component/atoms/button/button.component';
 import { HeaderComponent } from './component/atoms/header/header.component';
@@ -21,6 +18,8 @@ import { MenuComponent } from './component/molecules/menu/menu.component';
 import { FormComponent } from './component/organisms/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './component/molecules/alert/alert.component';
+import { ErrorHandlingService } from './services/error-handling.service';
+import { ToastComponent } from './component/atoms/toast/toast.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,25 +31,28 @@ import { AlertComponent } from './component/molecules/alert/alert.component';
     HeaderComponent,
     MenuComponent,
     FormComponent,
-    AlertComponent
-
+    AlertComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
-    TechnologyService, 
+    TechnologyService,
+    ErrorHandlingService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor, 
-      multi: true,
-      
-      
-    }
+      multi: true,  
+    },
+   
+    
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

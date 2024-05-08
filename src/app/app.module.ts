@@ -5,40 +5,26 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 
 import { AppComponent } from './app.component';
 
-import { HomeComponent } from 'src/app/component/pages/home/home.component';
-import { LibraryComponent } from 'src/app/component/pages/library/library.component';
-
-import { AppRoutingModule } from './app-routing.module';
-import { TechnologyComponent } from './component/pages/technology/technology.component';
-import { NavComponent } from './component/molecules/nav/nav.component';
 import { TechnologyService } from 'src/app/services/technology.service'; 
-import { ButtonComponent } from './component/atoms/button/button.component';
-import { HeaderComponent } from './component/atoms/header/header.component';
-import { MenuComponent } from './component/molecules/menu/menu.component';
-import { FormComponent } from './component/organisms/form/form.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AlertComponent } from './component/molecules/alert/alert.component';
+
 import { ErrorHandlingService } from './services/error-handling.service';
-import { ToastComponent } from './component/atoms/toast/toast.component';
+import { AtomsModule } from './component/atoms/atoms.module';
+import { MoleculesModule } from './component/molecules/molecules.module';
+import { OrganismsModule } from './component/organisms/organisms.module';
+import { PagesRoutingModule } from './component/pages/pages-routing.module';
+import { PagesModule } from './component/pages/pages.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    LibraryComponent,
-    TechnologyComponent,
-    NavComponent,
-    ButtonComponent,
-    HeaderComponent,
-    MenuComponent,
-    FormComponent,
-    AlertComponent,
-    ToastComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
+    PagesRoutingModule,
+    AtomsModule,
+    MoleculesModule,
+    OrganismsModule,
+    PagesModule
   ],
   providers: [
     TechnologyService,

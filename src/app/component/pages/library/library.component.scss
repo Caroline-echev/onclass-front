@@ -1,0 +1,18 @@
+@import 'src/app/styles/_text';
+
+
+.library {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: fuchsia;
+}
+
+.library__main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  background-color:  aqua;
+}

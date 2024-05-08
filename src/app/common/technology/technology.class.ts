@@ -12,13 +12,13 @@ export class Technology {
    constructor(private technologyService: TechnologyService) {}
 
   
-   getTechnologies(): void {
+  /* getTechnologies(): void {
     this.technologyService.getTechnologies()
       .subscribe(
         data => this.technologies = data,
         error => this.errorMessage = error.message
       );
-    }
+    }*/
       addTechnology(technology: Technology): any {
         this.technologyService.addTechnology(technology) 
           .subscribe(

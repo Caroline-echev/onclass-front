@@ -23,7 +23,7 @@ export class ErrorHandlingService {
           this.errorMessage = 'No se encontró el recurso solicitado';
           break;
         case 409:
-          this.errorMessage = 'Conflicto detectado. El elememto que desea registrar ya existe';
+          this.errorMessage = 'El elemento que desea registrar ya existe';
           break;
         default:
           this.errorMessage = error.error.message || error.error.error ;

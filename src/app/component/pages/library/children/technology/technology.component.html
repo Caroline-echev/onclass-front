@@ -1,0 +1,23 @@
+ <main class="technology__main">
+    <div *ngIf="!technologies" class="technology__empty">
+    <p class="children__empty--text">Crea una tecnología</p>
+    </div> 
+     <section *ngIf="technologies" class="technologies">
+
+        <ul>
+        <li class="technology__item" *ngFor="let technology of technologies">
+            <span class="list__name">{{ technology.name }}</span>
+            <p class="list__description">{{technology.description}}</p>
+            </li>
+        </ul>
+    </section> 
+    <app-button class="technology__button" text="Crear" classButton="fa-solid fa-plus" (click)="showForm()"></app-button>
+ </main>
+ 
+
+<app-form *ngIf="boolForm" 
+    [inputData]="inputTechnology"
+    title="Crear tecnología"
+    typeModel="technology" 
+    (closeForm)="onClose()"
+    ></app-form> 

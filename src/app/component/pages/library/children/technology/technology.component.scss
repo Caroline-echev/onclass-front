@@ -1,0 +1,23 @@
+
+@import 'src/app/styles/_text';
+
+
+.technology__main{
+  display: block;
+  background-color: grey;
+}
+  .technologies{
+    
+    padding-top: 40px;
+  }
+  .technology__item {
+     list-style: none;
+     padding: 17px ;
+     border-bottom: 2px solid $primary-color;
+  }
+  .technology__button {
+   position: relative;
+   bottom: 10px;
+   left: 80%;
+  }
+  

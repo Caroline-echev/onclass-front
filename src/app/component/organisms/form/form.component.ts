@@ -1,10 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { InputData } from 'src/app/common/interface/input-data';
-import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Technology } from 'src/app/common/technology/technology.class';
 import { TechnologyService } from 'src/app/services/technology.service';
-import { ErrorHandlingService } from 'src/app/services/error-handling.service';
-import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -18,7 +16,6 @@ export class FormComponent  implements OnInit {
   boolAlert: boolean = false; 
   boolError: boolean = false;
   form : FormGroup = new FormGroup({});
-  formTechnology: FormGroup = new FormGroup({});
   newTechnology: Technology = {} as Technology;
   messageAlert: string = '';
   messageError: string = '';
@@ -31,14 +28,22 @@ export class FormComponent  implements OnInit {
 
  
   ngOnInit(): void { 
-    if (this.model === 'technology') {
-      this.formTechnology = this.fb.group({
-        name: ['', [Validators.required, Validators.maxLength(50)]],
-        description: ['', [Validators.required, Validators.maxLength(90)]]
-      });
-      this.form = this.formTechnology;
+    this.createform();
+  }
+
+  createform() {
+    switch (this.model) {
+      case 'technology':
+        this.form = this.fb.group({
+          name: ['', [Validators.required, Validators.maxLength(50)]],
+          description: ['', [Validators.required, Validators.maxLength(90)]]
+        });
+        break;
+     
+      default:
+        console.error('Unsupported model:', this.model);
+        break;
     }
-    
   }
 
   onCloseForm() {
@@ -59,31 +64,32 @@ export class FormComponent  implements OnInit {
   }
   
   onSubmit(): void {
-    if (this.formTechnology.valid && this.model === 'technology') {
-      this.newTechnology.name = this.formTechnology.value.name;
-      this.newTechnology.description = this.formTechnology.value.description;
-      //this.messageError = this.newTechnology.addTechnology(this.newTechnology);
-      //console.log('holaaaaa',this.messageError);
-      this.technologyService.addTechnology(this.newTechnology) 
-      .subscribe(
-        data => {
-          console.log('Technology added:', data);
-           this.showAlert();
-        },
-        error => {
-          this.messageError = error.message;
-          this.showError();
-          console.log('clase ta error', this.messageError)
-      
-        }
-      )
-     
-      this.formTechnology.reset();
+    if (this.form.valid && this.model === 'technology') {
+
+      this.newTechnology.name = this.form.value.name;
+      this.newTechnology.description = this.form.value.description;
+      this.addTechnology(this.newTechnology);
+      this.form.reset();
     } else {
       console.error('Form is invalid. Please check for errors');
     }
 }
 
+addTechnology( technology: Technology) {
+ 
+  this.technologyService.addTechnology(technology) 
+  .subscribe(
+    data => {
+      console.log('Technology added:', data);
+       this.showAlert();
+    },
+    error => {
+      this.messageError = error.message;
+      this.showError();
+      console.log('clase ta error', this.messageError)
+  
+    })
+}
 
 getErrorMessage( fieldName: string): string {
   if (fieldName.toLowerCase() === 'name'){

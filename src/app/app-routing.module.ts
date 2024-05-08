@@ -4,9 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LibraryComponent } from 'src/app/component/pages/library/library.component';
  
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'library', component: LibraryComponent },
-  { path: '' , redirectTo: 'home', pathMatch: 'full' },
+  { path: '',
+  loadChildren: () => import('./component/pages/pages.module').then(m => m.PagesModule)}
 ]
 @NgModule({
   declarations: [],

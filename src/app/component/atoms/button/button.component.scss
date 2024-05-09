@@ -19,6 +19,7 @@
   text-align: center;
   justify-content: center;
   gap: 10px;
+  min-width: 42px;
 }
 i{
   font-size: 17px;
@@ -33,7 +34,7 @@ i{
   margin: auto;
   border-radius: 50%;
   display: block;
-  width: 20em;
+  min-width: 20em;
   height: 20em;
   left: -5em;
   text-align: center;

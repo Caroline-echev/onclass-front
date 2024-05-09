@@ -2,17 +2,19 @@
     <div *ngIf="!technologies" class="technology__empty">
     <p class="children__empty--text">Crea una tecnología</p>
     </div> 
-     <section *ngIf="technologies" class="technologies">
-
-        <ul>
-        <li class="technology__item" *ngFor="let technology of technologies">
-            <span class="list__name">{{ technology.name }}</span>
-            <p class="list__description">{{technology.description}}</p>
+      <section *ngIf="technologies" class="technologies">
+        <button class="order__button" (click)="sort()"><i [class]="classOrder"  ></i>{{textOrder}}</button>
+        <ul class="row" *ngFor="let technology of technologies">
+            <li class="technology__item" >
+                <span class="list__name">{{ technology.name }}</span>
+                <p class="list__description">{{technology.description}}</p>
             </li>
+            <app-button classButton="fa-solid fa-ellipsis-vertical"></app-button>
         </ul>
     </section> 
-    <app-button class="technology__button" text="Crear" classButton="fa-solid fa-plus" (click)="showForm()"></app-button>
- </main>
+        <app-button class="technology__button" text="Crear" classButton="fa-solid fa-plus" (click)="showForm()"></app-button>
+ 
+</main>
  
 
 <app-form *ngIf="boolForm" 

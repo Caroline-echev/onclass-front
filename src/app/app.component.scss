@@ -5,8 +5,7 @@
     justify-content: auto;
     position: relative; 
     margin-left: 20%  ;
-    height: 100%;
-    overflow: hidden;
+    min-height: calc(100vh - 70px);
     width: 80% ;
-    background-color: sandybrown;
+    overflow: hidden;
   }

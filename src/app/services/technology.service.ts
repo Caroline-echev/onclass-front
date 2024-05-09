@@ -22,7 +22,7 @@ export class TechnologyService {
     );
 
   }*/
-  getTechnologies(page: number = 0, size: number = 10, orderAsc: boolean = true): Observable<Page<Technology>> {
+  getTechnologies(page: number , size: number , orderAsc: boolean ): Observable<Page<Technology>> {
     return this.httpClient.get<Page<Technology>>(`${this.apiUrl}/getTechnologies?page=${page}&size=${size}&orderAsc=${orderAsc}`)
       .pipe(
         catchError((error) => {

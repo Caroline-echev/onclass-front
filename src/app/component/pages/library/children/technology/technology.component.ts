@@ -8,7 +8,7 @@ import { TechnologyService } from 'src/app/services/technology.service';
   templateUrl: './technology.component.html',
   styleUrls: ['./technology.component.scss']
 })
-export class TechnologyComponent implements OnInit {
+export class TechnologyComponent  {
   boolForm: boolean = false; 
   technologies: Technology[] = [];
   errorMessage: string = '';
@@ -19,25 +19,28 @@ export class TechnologyComponent implements OnInit {
   classOrder: string = 'fa-solid fa-arrow-up';
   inputTechnology: InputData[] = [
     {
-      title: 'Nombre: ',
+      title: 'Nombre ',
       placeholder: 'Nombre de la tecnologia',
-      controlName: 'name'
+      controlName: 'name',
+     
     },
     {
-      title: 'Descripción: ',
+      title: 'Descripción ',
       placeholder: 'Descripción de la tecnologia',
-      controlName: 'description'
+      controlName: 'description',
+     
+  
     }
   ];
 
   constructor(
     private technologyService: TechnologyService
   ) {
-  }
-  ngOnInit(): void { 
-    
     this.getTechnologies(this.page, this.size, this.orderAsc);
-    
+  }
+  
+  AddedSuccessfully() {
+    this.getTechnologies(this.page, this.size, this.orderAsc);
   }
   ngOnChanges(): void {
     this.getTechnologies(this.page, this.size, this.orderAsc);
@@ -48,7 +51,6 @@ export class TechnologyComponent implements OnInit {
   }
   onClose() {
     this.boolForm = false; 
-    
   }
   
   sort(){

@@ -4,6 +4,7 @@ import { ToastComponent } from './toast/toast.component';
 import { ButtonComponent } from './button/button.component';
 import { HeaderComponent } from './header/header.component';
 import { OrderComponent } from './order/order.component';
+import { SelectComponent } from './select/select.component';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { OrderComponent } from './order/order.component';
    ButtonComponent,
    HeaderComponent,
    ToastComponent,
-   OrderComponent
+   OrderComponent,
+   SelectComponent
   ],
   imports: [
     CommonModule
@@ -20,7 +22,8 @@ import { OrderComponent } from './order/order.component';
     ButtonComponent,
     HeaderComponent,
     ToastComponent,
-    OrderComponent
+    OrderComponent,
+    SelectComponent
   ]
   
 })

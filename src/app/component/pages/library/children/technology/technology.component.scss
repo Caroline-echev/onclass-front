@@ -5,11 +5,12 @@
 .technology__main{
   display: block;
   width: 100%;
+  
 }
   .technologies{
-    padding: 40px 100px 20px 15px;
-    margin-top: 20px;
-    
+    padding: 0px 150px 20px 15px;
+    overflow-y: auto;
+  max-height: calc(100vh - 390px);;
   }
   .technology__item {
      list-style: none;
@@ -18,8 +19,8 @@
      
   }
   .technology__button {
-   position: absolute;
-   bottom: 90px;
+   position: fixed;
+   bottom: 70px;
    right: 40px;
   }
   
@@ -35,4 +36,10 @@ button:hover {
    0px 5px 5px -1px rgba($primary-color, 0.45),
     inset 4px 4px 8px rgba($primary-color, 0.7),
      inset -4px -4px 8px rgba($primary-color, 0.55);
+}
+
+.technology__select{
+  position: absolute;
+  right: 100px;
+  top: 15px;
 }

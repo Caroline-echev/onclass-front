@@ -2,8 +2,11 @@
     <div *ngIf="!technologies" class="technology__empty">
     <p class="children__empty--text">Crea una tecnología</p>
     </div> 
+    <button class="order__button" (click)="sort()"><i [class]="classOrder"  ></i>{{textOrder}}</button>
+    <app-select class="tecnology__select"></app-select>
+    
       <section *ngIf="technologies" class="technologies">
-        <button class="order__button" (click)="sort()"><i [class]="classOrder"  ></i>{{textOrder}}</button>
+        
         <ul class="row" *ngFor="let technology of technologies">
             <li class="technology__item" >
                 <span class="list__name">{{ technology.name }}</span>

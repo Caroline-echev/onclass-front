@@ -1,0 +1,26 @@
+@import './src/app/styles/_variables';
+
+.custom-select {
+    font-size: 16px;
+    height: 35px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+    color: $primary-color; 
+    position: absolute;
+    right: 100px;
+    top: 15px;
+  }
+  
+  .select__text {
+    color: $primary-color; 
+  }
+  
+  .select__text:hover {
+    background: #ff8000;
+    color: #fff;
+  }
+  
+  .custom-select:focus {
+    outline: none;
+    border-color: #ff8000; }

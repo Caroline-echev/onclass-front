@@ -81,19 +81,20 @@ export class FormComponent  implements OnInit {
 addTechnology( technology: Technology) {
  
   this.technologyService.addTechnology(technology) 
-  .subscribe(
-    data => {
+  .subscribe({
+    next: (data : any) => {
       console.log('Technology added:', data);
        this.showAlert();
        this.added.emit();
     },
-    error => {
+    error: (error) => {
       this.messageError = error.message;
       this.showError();
-      console.log('clase ta error', this.messageError)
-  
-    })
+      console.log('clase ta error', this.messageError);
+    }
+    });
 }
+
 
 getErrorMessage(controlName: string): string {
   const control = this.form.get(controlName);
@@ -101,8 +102,6 @@ getErrorMessage(controlName: string): string {
     return this.formErrorService.getErrorMessage(control, controlName);
   } else {
     return '';   }
-
-
 }
 }
 type typeModel = 'technology' | 'capacity' | 'bootcamp'

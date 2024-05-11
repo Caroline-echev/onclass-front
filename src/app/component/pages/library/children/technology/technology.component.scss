@@ -20,7 +20,7 @@
   }
   .technology__button {
    position: fixed;
-   bottom: 70px;
+   bottom: 80px;
    right: 40px;
   }
   
@@ -31,15 +31,75 @@
   align-items: center;
 }
 
-button:hover {
-  box-shadow: 0px 0px 20px rgba($primary-color, 0.7),
-   0px 5px 5px -1px rgba($primary-color, 0.45),
-    inset 4px 4px 8px rgba($primary-color, 0.7),
-     inset -4px -4px 8px rgba($primary-color, 0.55);
-}
+
 
 .technology__select{
   position: absolute;
   right: 100px;
   top: 15px;
+}
+.pagination {
+  position: fixed;
+   bottom: 15px;
+   right: 40px;
+}
+::ng-deep{
+  .ngx-pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px ;
+  }
+
+  .ngx-pagination a,
+  .ngx-pagination .current {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    min-width: 26px !important;
+    min-height: 26px !important;
+    padding: 4px !important;
+    border-radius: 50% !important;
+    cursor: pointer;
+}
+
+.ngx-pagination .current {
+  background: $primary-color !important;
+  box-shadow: 0px 0px 6px 0px rgb(255, 189, 143) inset;
+
+  box-shadow: 0px 5px 10px 0px rgba(231, 131, 61, 0.8);
+  
+  box-shadow: 0px 4px 4px 0px rgba(231, 131, 61, 0.8);
+  
+}
+  .ngx-pagination a{
+    padding: 0% !important;
+    color: #828285 !important;
+  }
+  .ngx-pagination li {
+    padding: 5px 10px;
+  
+  }
+  .ngx-pagination .pagination-previous a::before,
+  .ngx-pagination .pagination-previous.disabled::before {
+    font-family: FontAwesome;
+    content: "\f053" !important;
+    display: inline-block !important;
+    margin-right: 0rem !important;
+    color: $primary-color !important;
+  }
+
+  .ngx-pagination .pagination-next a::after,
+.ngx-pagination .pagination-next.disabled::after {
+  font-family: FontAwesome !important;
+  content: "\f054" !important;
+  display: inline-block !important;
+  margin-left: 0rem !important;
+  color: $primary-color !important;
+}
+
+.ngx-pagination .pagination-next.disabled:after,
+.ngx-pagination .pagination-previous.disabled:before  {
+  color: #fff !important;
+}
 }

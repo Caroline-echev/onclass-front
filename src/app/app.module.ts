@@ -2,11 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor'; 
-
 import { AppComponent } from './app.component';
-
 import { TechnologyService } from 'src/app/services/technology.service'; 
-
 import { ErrorHandlingService } from './services/error-handling.service';
 import { AtomsModule } from './component/atoms/atoms.module';
 import { MoleculesModule } from './component/molecules/molecules.module';

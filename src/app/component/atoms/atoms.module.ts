@@ -5,7 +5,7 @@ import { ButtonComponent } from './button/button.component';
 import { HeaderComponent } from './header/header.component';
 import { OrderComponent } from './order/order.component';
 import { SelectComponent } from './select/select.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
    SelectComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
 
   ],
   exports: [

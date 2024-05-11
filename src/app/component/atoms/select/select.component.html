@@ -1,5 +1,5 @@
-<select name="select" class="custom-select">
-    <option class="select__text" value="10" selected>10 por página</option>
+<select  name="select" class="custom-select" [(ngModel)]="size" (change)="onPageSizeChange($event)">
+    <option class="select__text" value="10" >10 por página</option>
     <option class="select__text"  value="25">25 por página</option>
     <option class="select__text" value="50">50 por página</option>
 </select>

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss']
 })
-export class SelectComponent implements OnInit {
+export class SelectComponent  {
+  size: number = 10;
+  @Output() pageSizeChange = new EventEmitter<number>();
 
-  constructor() { }
-
-  ngOnInit(): void {
+  onPageSizeChange(event: Event): void {
+    const selectedPageSize = (event.target as HTMLSelectElement).value;
+    this.pageSizeChange.emit(this.size);
   }
-
 }

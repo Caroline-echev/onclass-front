@@ -8,6 +8,7 @@ import { AtomsModule } from '../../../atoms/atoms.module';
 import { MoleculesModule } from '../../../molecules/molecules.module';
 import { OrganismsModule } from '../../../organisms/organisms.module';
 import { TechnologyComponent } from './technology/technology.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TechnologyComponent } from './technology/technology.component';
     ChildrenRoutingModule,
     AtomsModule,
     MoleculesModule,
-    OrganismsModule
+    OrganismsModule,
+    NgxPaginationModule
   ],
   exports: [
     TechnologyComponent,

@@ -8,7 +8,7 @@ import { TechnologyService } from 'src/app/services/technology.service';
   templateUrl: './technology.component.html',
   styleUrls: ['./technology.component.scss']
 })
-export class TechnologyComponent  {
+export class TechnologyComponent implements OnInit {
   boolForm: boolean = false; 
   technologies: Technology[] = [];
   errorMessage: string = '';
@@ -17,6 +17,9 @@ export class TechnologyComponent  {
   orderAsc: boolean = true;
   textOrder: string = 'A – Z';
   classOrder: string = 'fa-solid fa-arrow-up';
+  totalItems: number = 0;
+  pagination: number = 0;
+  maxSize: number = 5;
   inputTechnology: InputData[] = [
     {
       title: 'Nombre ',
@@ -32,18 +35,26 @@ export class TechnologyComponent  {
   
     }
   ];
+  
+
 
   constructor(
     private technologyService: TechnologyService
   ) {
-    this.getTechnologies(this.page, this.size, this.orderAsc);
   }
-  
-  AddedSuccessfully() {
-    this.getTechnologies(this.page, this.size, this.orderAsc);
+  ngOnInit(): void {
+    this.getTechnologies();
   }
-  ngOnChanges(): void {
-    this.getTechnologies(this.page, this.size, this.orderAsc);
+
+  onPageChange(page: number): void {
+    this.page = page -1;
+    this.getTechnologies();
+  }
+
+  onPageSizeChange(pageSize: number): void {
+    console.log('onPageSizeChange', pageSize);
+    this.size = pageSize;
+    this.getTechnologies();
   }
 
   showForm(): void {
@@ -55,7 +66,7 @@ export class TechnologyComponent  {
   
   sort(){
     this.orderAsc = !this.orderAsc;
-    this.getTechnologies(this.page, this.size, this.orderAsc)
+    this.getTechnologies()
     if(this.orderAsc){
       this.classOrder = 'fa-solid fa-arrow-up';
       this.textOrder = 'A – Z';
@@ -65,11 +76,13 @@ export class TechnologyComponent  {
     }
   }
 
-  getTechnologies(page: number , size: number , orderAsc: boolean) {
-    this.technologyService.getTechnologies(page, size, orderAsc).subscribe(
+
+  getTechnologies() {
+    this.technologyService.getTechnologies(this.page, this.size, this.orderAsc).subscribe(
       (page) => {
         console.log('technologies:', page);
         this.technologies = page.content;
+        this.totalItems = page.totalElements;
       },
       (error) => {
         console.error('technologies error:', error);

@@ -11,7 +11,7 @@ export class TechnologyService {
   message: string = '';
   constructor(private httpClient: HttpClient,  private errorHandlingService: ErrorHandlingService) {}
 
-  getTechnologies(page: number , size: number , orderAsc: boolean ): Observable<Page<Technology>> {
+  getTechnologies(page: number , size: number  , orderAsc: boolean ): Observable<Page<Technology>> {
     return this.httpClient.get<Page<Technology>>(`${this.apiUrl}/getTechnologies?page=${page}&size=${size}&orderAsc=${orderAsc}`)
       .pipe(
         catchError((error) => {

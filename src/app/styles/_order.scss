@@ -11,14 +11,15 @@
     cursor: pointer;
     right: 260px;
     top: 15px;
-    font-weight: bold ;
     top: 15px;
     padding: 5px;
+ 
   }
 
-.order__button:hover{
-   text-shadow: 0px 0px 10px rgb($primary-color, 0.5);
-}
+ .order__button:hover {
+    font-weight: bold;
+    text-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color, 0 0 30px $primary-color; 
+ }
  i{
     padding-right: 4px;
  }

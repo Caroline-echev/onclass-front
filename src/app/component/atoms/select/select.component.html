@@ -1,5 +1,11 @@
-<select  name="select" class="custom-select" [(ngModel)]="size" (change)="onPageSizeChange($event)">
-    <option class="select__text" value="10" >10 por página</option>
-    <option class="select__text"  value="25">25 por página</option>
-    <option class="select__text" value="50">50 por página</option>
-</select>
+<section class="custom-select" (click)="toggleOptions()">
+    <div class="select-selected">{{ selectedOption }}
+        <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="select-items" [ngClass]="{'show': showOptions}">
+      <div class="select-item" (click)="selectOption('10 por página', 10)">10 por página</div>
+      <div class="select-item" (click)="selectOption('25 por página', 25 )">25 por página</div>
+      <div class="select-item" (click)="selectOption('50 por página', 50)">50 por página</div>
+    </div>
+  </section>
+  

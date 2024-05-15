@@ -74,7 +74,8 @@ export class FormComponent  implements OnInit {
       this.addTechnology(this.newTechnology);
       this.form.reset();
     } else {
-      console.error('Form is invalid. Please check for errors');
+      this.messageError = 'Formulario incompleto. Por favor, rellene todos los campos obligatorios';
+      this.showError();
     }
 }
 
@@ -90,7 +91,6 @@ addTechnology( technology: Technology) {
     error: (error) => {
       this.messageError = error.message;
       this.showError();
-      console.log('clase ta error', this.messageError);
     }
     });
 }

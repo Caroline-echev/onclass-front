@@ -18,13 +18,11 @@
         <app-button class="technology__button" text="Crear" classButton="fa-solid fa-plus" (click)="showForm()"></app-button>
         
         <div class="pagination" >
-            <pagination-controls (pageChange)="onPageChange(pagination = $event  )"
-            
+            <pagination-controls (pageChange)="onPageChange(pagination = $event)"
             nextLabel=""
             [maxSize]="maxSize"
             previousLabel=""
             >
-           
         </pagination-controls>
         </div>
 </main>

@@ -1,0 +1,26 @@
+@import './src/app/styles/_variables';
+
+.order__button {
+    width: 100px;
+    overflow: hidden;
+    border: none;
+    color: $primary-color;
+    background: transparent;
+    position: absolute;
+    border-radius: 50px;
+    cursor: pointer;
+    right: 260px;
+    top: 15px;
+    top: 15px;
+    padding: 5px;
+ 
+  }
+
+ .order__button:hover {
+    font-weight: bold;
+    text-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color, 0 0 30px $primary-color; 
+ }
+ i{
+    padding-right: 4px;
+ }
+   

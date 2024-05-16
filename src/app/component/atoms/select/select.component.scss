@@ -1,0 +1,54 @@
+@import 'src/app/styles/_variables';
+
+.custom-select {
+  position: absolute;
+  right: 100px;
+  top: 12px;
+}
+
+.select-selected {
+  background-color: transparent;
+  color: $primary-color;
+  padding: 7px 16px;;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.select-selected:hover { 
+  text-shadow: 0 0 10px $primary-color, 
+  0 0 20px $primary-color, 
+  0 0 30px $primary-color; 
+
+}
+
+.select-items {
+  display: none;
+  position: absolute;
+  background-color: $form-color;
+  border: 1px solid $primary-color;
+  border-radius: 25px;
+  z-index: 1;
+  width: 100%;
+  max-height: auto;
+  overflow-y: auto;
+}
+
+.select-items.show {
+  display: block;
+}
+.select-items:hover{
+  box-shadow: 0px 12px 24px 0px $primary-color;
+box-shadow: 0px 4px 24px 0px $primary-color;
+
+}
+
+.select-item {
+  padding: 8px 16px;
+  cursor: pointer;
+  color: $primary-color;
+}
+
+.select-item:hover {
+  color: $form-color;
+  background-color: $primary-color; /* Cambia el color de fondo del hover aquí */
+}

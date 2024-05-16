@@ -1,0 +1,26 @@
+@import './src/app/styles/_variables';
+.order__button {
+    display: flex;
+    position: relative;
+    background: $primary-color;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 140px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 17px;
+    padding: 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 40px;
+  }
+  button svg {
+   
+    transform: translateY(-50%) rotate(-50deg);
+    transition: 0.2s ease-out;
+  }
+  
+  button:hover svg {
+    transform: translateY(-50%) rotate(-90deg);
+  }

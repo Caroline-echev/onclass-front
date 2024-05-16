@@ -1,0 +1,16 @@
+@import 'src/app/styles/_text';
+
+.library__menu{
+ padding-top: 15px;
+ padding-left: 10px;
+}
+.library__main {
+  display: flexbox;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 150px;
+  padding-top: 70px;
+  height: 100%;
+}

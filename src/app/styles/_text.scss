@@ -1,0 +1,70 @@
+@import 'src/app/styles/_variables';
+
+.header-form__text{
+  font-size: $big-text;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.input__title {
+  font-size: $small-text;
+  font-weight: bold;
+  text-align: left;
+  color: $primary-color;
+
+}
+.nav__text {
+  text-align: left; 
+  width: 150px;
+  font-size: $medium-text;
+  color: $primary-color;
+}
+.home__text {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: $primary-color;
+  font-size: $big-text;
+  text-align: center;
+  width: 300px;
+  line-height: 25.2px;
+}
+
+.menu__text {
+  width: 100%;
+  font-size: 13px;
+  margin: 0 20px;
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: $small-text;
+  color: $primary-color;
+  
+} 
+.children__empty--text{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  font-weight: bold;
+  color: $primary-color;
+  font-size: $big-text;
+}
+
+.error-message {
+  color: $error-color;
+  font-size: 14px;
+}
+
+.alert__correct--text {
+  color: $alert-correct-text-color;
+  font-size: $alert-correct-text;
+}
+
+.list__name{
+  color : $text-list;
+  font-size: $text-list-name-size;
+  font-weight: bold;
+}
+.list__description{
+  color : $alert-correct-text-color;
+  font-size: $medium-text;
+
+}

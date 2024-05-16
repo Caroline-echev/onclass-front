@@ -1,0 +1,11 @@
+.main {
+    display: flex;  
+    flex-direction: column; 
+    align-items: auto;
+    justify-content: auto;
+    position: relative; 
+    margin-left: 20%  ;
+    min-height: calc(100vh - 70px);
+    width: 80% ;
+    overflow: hidden;
+  }

@@ -1,0 +1,61 @@
+@import './src/app/styles/_variables';
+@import './src/app/styles/_text';
+
+.nav {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  width: 20%; 
+  height: 100vh; 
+  position: fixed; 
+  top: 0; 
+  background-color: $nav-color;
+  overflow: hidden;
+}
+
+.nav__logo {
+    width: 190px;
+    margin-top: 10px;
+    background-size: cover;
+}
+
+.nav__items {
+  width: 100%;
+  margin-top: 30%;
+  list-style: none; 
+  padding: 0px;
+}
+
+.nav__li {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  padding: 10px 0px ; 
+  margin-bottom: 10px;
+  border-radius: 10px; 
+  width: 100%; 
+  margin: 0 auto;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  &:hover { 
+    background-color: rgba($primary-color, 0.28); 
+    font-weight: bold;    
+  } 
+} 
+
+.active-router {
+  background-color: rgba($primary-color, 0.4); 
+  font-weight: bold;
+  border-radius: 10px; 
+  width: 100%; ; 
+}
+
+
+.nav__text--icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  background-size: cover;
+}
+ 

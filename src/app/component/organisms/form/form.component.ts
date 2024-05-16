@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { InputData } from 'src/app/common/interface/input-data';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { TechnologyService } from 'src/app/services/technology.service';
-import { Technology } from 'src/app/common/technology/technology.class';
 import { FormErrorService } from 'src/app/services/form-error.service';
+import { Technology } from 'src/app/common/interface/technology';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -27,7 +27,6 @@ export class FormComponent  implements OnInit {
     private technologyService: TechnologyService,
     private formErrorService: FormErrorService
   ) {
-    this.newTechnology = new Technology(technologyService);
   }
 
   ngOnInit(): void { 

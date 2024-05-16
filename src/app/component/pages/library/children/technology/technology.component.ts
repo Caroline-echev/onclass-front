@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InputData } from 'src/app/common/interface/input-data';
-import { Technology } from 'src/app/common/technology/technology.class';
+import { Technology } from 'src/app/common/interface/technology';
 import { TechnologyService } from 'src/app/services/technology.service';
 
 @Component({
@@ -78,16 +78,17 @@ export class TechnologyComponent implements OnInit {
 
 
   getTechnologies() {
-    this.technologyService.getTechnologies(this.page, this.size, this.orderAsc).subscribe(
-      (page) => {
+    this.technologyService.getTechnologies(this.page, this.size, this.orderAsc)
+    .subscribe({
+      next: (page) => {
         console.log('technologies:', page);
         this.technologies = page.content;
         this.totalItems = page.totalElements;
       },
-      (error) => {
+      error: (error) => {
         console.error('technologies error:', error);
       }
-    );
+    })
   }
   
   

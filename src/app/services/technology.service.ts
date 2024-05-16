@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
-import { Technology } from 'src/app/common/technology/technology.class';
+import { Technology } from 'src/app/common/interface/technology';
 import { ErrorHandlingService } from './error-handling.service';
 import { Page } from 'src/app/common/interface/page.interface';
 import { environment } from 'src/environments/environment';

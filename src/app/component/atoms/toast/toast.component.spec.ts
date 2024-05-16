@@ -1,5 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { ToastComponent } from './toast.component';
 
 describe('ToastComponent', () => {
@@ -8,10 +7,11 @@ describe('ToastComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ToastComponent ]
-    })
-    .compileComponents();
+      declarations: [ToastComponent]
+    }).compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(ToastComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -20,4 +20,14 @@ describe('ToastComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit closeError event after 5 seconds', fakeAsync(() => {
+    spyOn(component.closeError, 'emit');
+    
+    component.ngOnInit();
+
+    tick(5000);
+
+    expect(component.closeError.emit).toHaveBeenCalled();
+  }));
 });

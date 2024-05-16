@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TechnologyComponent } from './technology.component';
+import { TechnologyService } from 'src/app/services/technology.service'; // Importa el servicio
 
 describe('TechnologyComponent', () => {
   let component: TechnologyComponent;
@@ -9,8 +9,7 @@ describe('TechnologyComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ TechnologyComponent ]
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TechnologyComponent);
     component = fixture.componentInstance;

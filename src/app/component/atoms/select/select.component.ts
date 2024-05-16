@@ -32,4 +32,7 @@ export class SelectComponent {
     this.pageSizeChange.emit(this.size);
     this.showOptions = false;
   }
+  isClickedInsideComponent(event: MouseEvent): boolean {
+    return this.elementRef.nativeElement.contains(event.target);
+  }
 }
